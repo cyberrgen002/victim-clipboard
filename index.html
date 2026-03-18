@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Evil Origin</title>
+</head>
+<body>
+  <h1>Evil Origin (Test Bypass)</h1>
+
+<button onclick="testClipboard()">Test Clipboard Access</button>
+
+  <script>
+    async function testClipboard() {
+      try {
+        const text = await navigator.clipboard.readText();
+        console.log("[evil] 🔥 BYPASS SUCCESS:", text);
+        alert("BYPASS SUCCESS: " + text);
+      } catch (e) {
+        console.log("[evil] Access blocked:", e);
+        alert("Access blocked (expected behavior)");
+      }
+    }
+  </script>
+
+</body>
+</html>
